@@ -1,0 +1,8 @@
+[05/May/2026 16:30:45] "GET /api/products/?search=thuoc HTTP/1.1" 200 302
+[05/May/2026 16:30:45] "GET /api/products/?plants=lua HTTP/1.1" 200 2165
+[05/May/2026 16:30:45] "GET /api/products/?ordering=-sale_count HTTP/1.1" 200 3783
+[05/May/2026 16:30:45] "GET /api/products/may-phun-thuoc-ien-16l/ HTTP/1.1" 200 945
+[05/May/2026 16:31:05] "GET /api/products/may-phun-thuoc-ien-16l/ HTTP/1.1" 200 945
+[05/May/2026 16:31:05] "GET /api/products/?ordering=price HTTP/1.1" 200 3783
+[05/May/2026 16:31:05] "GET /api/products/?category=thuoc-tru-benh HTTP/1.1" 200 716
+[05/May/2026 16:31:05] "GET /api/products/?tag=B%C3%A1n%20ch%E1%BA%A1y HTTP/1.1" 200 1480

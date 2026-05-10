@@ -1,0 +1,589 @@
+[
+  {
+    "name": "HOBYO 200WP",
+    "slug": "hobyo-200wp",
+    "slug_original": "hobyo-200wp-thuoc-đac-tri-benh-virus",
+    "category": "Thuốc trừ bệnh",
+    "subtitle": "",
+    "description": "Thành phần hoạt chất chính:\nMoroxydine Hydrochloride: 16%\nCopper Axcetate: 4%\nThuốc trừ Virus sinh học hữu cơ đầu tiên tại Việt Nam",
+    "specs": [
+      {
+        "key": "GÓI",
+        "value": "500GR"
+      },
+      {
+        "key": "GÓI",
+        "value": "75GR"
+      }
+    ],
+    "thumbnail": "images/HOBYO.jpg",
+    "images": [
+      "images/HOBYO.jpg",
+      "images/Hobyo500grXanhMT.png",
+      "images/Hobyo500grVangMT.png",
+      "images/Hobyo500grXanhMS.png",
+      "images/Hobyo500grVàngMS.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/hobyo-200wp-thuoc-%C4%91ac-tri-benh-virus"
+  },
+  {
+    "name": "HOBYO LÚA 200WP - DÒNG R",
+    "slug": "hobyo-lua-200wp-dong-r",
+    "slug_original": "hobyo-lua-6-trong-1",
+    "category": "Thuốc trừ bệnh",
+    "subtitle": "",
+    "description": "Thành phần hoạt chất chính:\nMoroxydine Hydrochloride: 16%\nCopper Axcetate: 4%\nCHUYÊN BIỆT TRỪ BỆNH HẠI TRÊN CÂY LÚA",
+    "specs": [
+      {
+        "key": "GÓI",
+        "value": "300GR"
+      },
+      {
+        "key": "GÓI",
+        "value": "30GR"
+      }
+    ],
+    "thumbnail": "images/HobyoLuaMT.jpg",
+    "images": [
+      "images/HobyoLuaMT.jpg"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/hobyo-lua-6-trong-1"
+  },
+  {
+    "name": "CAMARO 100SC",
+    "slug": "camaro-100sc",
+    "slug_original": "phat-minh-moi-tu-nhat-ban",
+    "category": "Thuốc trừ bệnh",
+    "subtitle": "",
+    "description": "Thành phần hoạt chất:\nCyazofamid 100g/L\nAdditive Suspended: 100g/L\nDispersion solvent: 300g/L",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "50ml"
+      },
+      {
+        "key": "Chai",
+        "value": "220ml"
+      }
+    ],
+    "thumbnail": "images/camaro.jpg",
+    "images": [
+      "images/camaro.jpg",
+      "images/Camaro_250ml__chai_tron.png",
+      "images/Camaro_50ml_tron.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/phat-minh-moi-tu-nhat-ban"
+  },
+  {
+    "name": "KENTAK 10SC",
+    "slug": "kentak-10sc",
+    "slug_original": "chuyen-tru-sau-khang-thuoc",
+    "category": "Thuốc trừ sâu",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nMethoxyfenozide 8%(w/w)\nAbamectin 2%(w/w)",
+    "specs": [
+      {
+        "key": "Gói",
+        "value": "25ml"
+      },
+      {
+        "key": "Chai",
+        "value": "250ml"
+      }
+    ],
+    "thumbnail": "images/MB_KenTakMienBac.png",
+    "images": [
+      "images/MB_KenTakMienBac.png",
+      "images/MN_KenTakMienNam300ml.png",
+      "images/KenTakMS.png",
+      "images/996541a803c1ca9f93d0.jpg",
+      "images/KenTak25ml.jpg",
+      "images/HopCapDoi.jpg",
+      "images/Hop75mlMS.jpg",
+      "images/Hop75mlMT.jpg"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/chuyen-tru-sau-khang-thuoc"
+  },
+  {
+    "name": "MIKCIDE 1.5SL",
+    "slug": "mikcide-1-5sl",
+    "slug_original": "diet-sach-nam-khuan",
+    "category": "Thuốc trừ bệnh",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất\nTetramycin 1.5 ml/L\nBạn đang đọc thông tin về một sản phẩm ưu việt của thế kỷ 21.Tôi chắc chắn bạn sẽ hài lòng khi sử dụng MIKCIDE 1.5SL kể cả khi bạn áp đặt cho MIKCIDE 1.5SL tiêu chuẩn khắt khe của Châu Âu hoặc Mỹ.\nHãy sử dụng MIKCIDE 1.5SL và cùng chúng tôi nói về vụ mùa bội thu của bạn.",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "100ml"
+      },
+      {
+        "key": "Chai",
+        "value": "240ml"
+      }
+    ],
+    "thumbnail": "images/MIKCIDE.jpg",
+    "images": [
+      "images/MIKCIDE.jpg",
+      "images/MikcideMT.png",
+      "images/MikCIdeMS.png",
+      "images/MikCide20mlMS.jpg",
+      "images/Mikcide20mlMT.jpg"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/diet-sach-nam-khuan"
+  },
+  {
+    "name": "ROVIA 420SC",
+    "slug": "rovia-420sc",
+    "slug_original": "thuoc-tru-nam-cong-thuc-đac-biet",
+    "category": "Thuốc trừ bệnh",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nPyrimethanil 420g/L\nSpecial Additive One: 150g/L\nSpecial Additive Two: 80g/L",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "240ml"
+      }
+    ],
+    "thumbnail": "images/ROVIA.jpg",
+    "images": [
+      "images/ROVIA.jpg",
+      "images/roviaMS.png",
+      "images/RoVia20mlMT.jpg",
+      "images/RoVia20mlMS.jpg"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/thuoc-tru-nam-cong-thuc-%C4%91ac-biet"
+  },
+  {
+    "name": "CHẾ PHẨM GIẢI ĐỘC CHỐNG SỐC KHẮC VIRUS",
+    "slug": "che-pham-giai-doc-chong-soc-khac-virus",
+    "slug_original": "gia-tang-hieu-qua-thuoc-ho-tro-đieu-tri-benh-virus-chong-lai-thoi-tiet-khac-nghiet",
+    "category": "Thuốc Kích Thích Sinh Trưởng",
+    "subtitle": "",
+    "description": ".",
+    "specs": [
+      {
+        "key": "CHAI",
+        "value": "250ML"
+      },
+      {
+        "key": "CHAI",
+        "value": "100ML"
+      }
+    ],
+    "thumbnail": "images/GiaiDocChongSoc.png",
+    "images": [
+      "images/GiaiDocChongSoc.png",
+      "images/BoZn_MS.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/gia-tang-hieu-qua-thuoc-ho-tro-%C4%91ieu-tri-benh-virus-chong-lai-thoi-tiet-khac-nghiet"
+  },
+  {
+    "name": "GOLDBEM 777WP",
+    "slug": "goldbem-777wp",
+    "slug_original": "đao-on-vi-khuan-3-hoat-chat",
+    "category": "Thuốc trừ bệnh",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nNingnamycin: 27g/kg\nTricyclazole: 700g/kg\nValidamycin: 50g/kg\nPhụ gia; vừa đủ 1kg",
+    "specs": [
+      {
+        "key": "Gói",
+        "value": "25g"
+      }
+    ],
+    "thumbnail": "images/goldbemmt.jpg",
+    "images": [
+      "images/goldbemmt.jpg",
+      "images/goldbemms.jpg"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/%C4%91ao-on-vi-khuan-3-hoat-chat"
+  },
+  {
+    "name": "BLUTOC 250EC",
+    "slug": "blutoc-250ec",
+    "slug_original": "thuoc-tru-nhen",
+    "category": "Thuốc trừ sâu",
+    "subtitle": "",
+    "description": "",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "250ml"
+      },
+      {
+        "key": "Chai",
+        "value": "500ml"
+      }
+    ],
+    "thumbnail": "images/BLUTOC250EC.ok.png",
+    "images": [
+      "images/BLUTOC250EC.ok.png",
+      "images/BLUTOC500ml.ok.png",
+      "images/BLUTOC500mlCAM.ok.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/thuoc-tru-nhen"
+  },
+  {
+    "name": "Bình Phun Thuốc Hàn Quốc Siêu Nhẹ",
+    "slug": "binh-phun-thuoc-han-quoc-sieu-nhe",
+    "slug_original": "binh-cua-han-quoc",
+    "category": "Máy và Thiết Bị Nông Nghiệp",
+    "subtitle": "",
+    "description": "Dung tích bình: 12L\nTổng trọng lượng 2.5kg\nSử dụng chuyên nghiệp cho Thanh Long.\nThiết kế nhỏ gọn thuận lợi cho phụ nữ sử dụng.\nPin: Lithium 11,1V/4,4Ah\nÁp lực bơm để 40psi,\nDòng điện là khoảng 1.4A vì thế pin 4.4A có thể làm việc liên tục trong 3 giờ",
+    "specs": [],
+    "thumbnail": "images/a12fa3a8a8c1529f0bd0.jpg",
+    "images": [
+      "images/a12fa3a8a8c1529f0bd0.jpg",
+      "images/BinhSieuNhe.jpg",
+      "images/MS-BinhSieuNhe.jpg",
+      "images/Pin.jpg",
+      "images/Sac.jpg",
+      "images/Taycam.jpg",
+      "images/maybom.jpg"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/binh-cua-han-quoc"
+  },
+  {
+    "name": "ZORKET 450WP",
+    "slug": "zorket-450wp",
+    "slug_original": "chuyen-tri-chich-hut-khang-thuoc",
+    "category": "Thuốc trừ sâu",
+    "subtitle": "",
+    "description": "Thành phần hoạt chất:\nThiacloprid: 50g/kg\nIsoprocarb: 400g/kg\nThuốc trừ chích hút thế hệ mới.",
+    "specs": [
+      {
+        "key": "gói",
+        "value": "45gr"
+      },
+      {
+        "key": "gói",
+        "value": "270g"
+      }
+    ],
+    "thumbnail": "images/ZORKET450WPmt.jpg",
+    "images": [
+      "images/ZORKET450WPmt.jpg",
+      "images/ZORKET450WPms.jpg",
+      "images/Screenshot_2021-07-24_111846.png",
+      "images/Screenshot_2021-07-24_111917.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/chuyen-tri-chich-hut-khang-thuoc"
+  },
+  {
+    "name": "ACTAMEC 40EC",
+    "slug": "actamec-40ec",
+    "slug_original": "vua-su-tu",
+    "category": "Thuốc trừ sâu",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nAbamectin: 38g/L\nLambda cyhalothrin: 2g/L\nDeicated Additive: Enough a liter",
+    "specs": [
+      {
+        "key": "Gói",
+        "value": "25ml"
+      },
+      {
+        "key": "Chai",
+        "value": "100ml"
+      }
+    ],
+    "thumbnail": "images/VUASUTU100MLmt.png",
+    "images": [
+      "images/VUASUTU100MLmt.png",
+      "images/VUASUTU100MLms.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/vua-su-tu"
+  },
+  {
+    "name": "GOLDAN 750WP",
+    "slug": "goldan-750wp",
+    "slug_original": "thuoc-tru-sau-pho-rong-goldan",
+    "category": "Thuốc trừ sâu",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nThiosultap - Sodium: 700g/kg\nAcetamiprd: 50g/kg.",
+    "specs": [
+      {
+        "key": "Gói",
+        "value": "45g"
+      },
+      {
+        "key": "Gói",
+        "value": "200g"
+      },
+      {
+        "key": "Gói",
+        "value": "350g"
+      }
+    ],
+    "thumbnail": "images/goldan350mt.PNG",
+    "images": [
+      "images/goldan350mt.PNG",
+      "images/goldan350ms.PNG",
+      "images/goldan200mt.PNG",
+      "images/goldan200ms.PNG",
+      "images/goldan45mt.PNG",
+      "images/goldan45ms.PNG"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/thuoc-tru-sau-pho-rong-goldan"
+  },
+  {
+    "name": "MIKHADA 20WP",
+    "slug": "mikhada-20wp",
+    "slug_original": "thuoc-tru-chich-hut",
+    "category": "Thuốc trừ sâu",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nImidacloprid 200g/kg\nLưu dẫn 2 chiều",
+    "specs": [
+      {
+        "key": "Gói",
+        "value": "100g"
+      }
+    ],
+    "thumbnail": "images/MIKHADAmt.jpg",
+    "images": [
+      "images/MIKHADAmt.jpg",
+      "images/MIKHADAms.jpg"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/thuoc-tru-chich-hut"
+  },
+  {
+    "name": "JARA 400EC",
+    "slug": "jara-400ec",
+    "slug_original": "ray-nuoc-jara",
+    "category": "Thuốc trừ sâu",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nAcetamiprid: 50g/L\nFenobucarb: 350g/L",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "250ml"
+      },
+      {
+        "key": "Chai",
+        "value": "500ml"
+      }
+    ],
+    "thumbnail": "images/JARA500ML.NHIEULOAICAY.png",
+    "images": [
+      "images/JARA500ML.NHIEULOAICAY.png",
+      "images/JARA450MLcho_LUA.png",
+      "images/JARA250ML.OK.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/ray-nuoc-jara"
+  },
+  {
+    "name": "ETOBON 0.56SL",
+    "slug": "etobon-0-56sl",
+    "slug_original": "đac-tri-tuyen-trung",
+    "category": "Thuốc Trừ Tuyến Trùng",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất\nZeatin: 0.56g/L\nSpecial Additive: 50g/L\nDung môi: Vừa đủ 1L",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "100ml"
+      }
+    ],
+    "thumbnail": "images/ETOBON.jpg",
+    "images": [
+      "images/ETOBON.jpg",
+      "images/ETOBONmt.png",
+      "images/hopetobon1.PNG",
+      "images/ETOBONms.png",
+      "images/hopetobon2.PNG"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/%C4%91ac-tri-tuyen-trung"
+  },
+  {
+    "name": "SHEPATIN 75EC",
+    "slug": "shepatin-75ec",
+    "slug_original": "san-pham-đen-tu-an-đo",
+    "category": "Thuốc trừ sâu",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nAbamectin: 25g/L\nAlpha-cypermerthrin: 50g/l\nSpecical Additive: vừa đủ 1L",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "250ml"
+      },
+      {
+        "key": "Chai",
+        "value": "500ml"
+      }
+    ],
+    "thumbnail": "images/SHEPATIN250ML.OK.png",
+    "images": [
+      "images/SHEPATIN250ML.OK.png",
+      "images/SHEPATINchai500ML.OK.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/san-pham-%C4%91en-tu-an-%C4%91o"
+  },
+  {
+    "name": "BEMSUPER 750WG",
+    "slug": "bemsuper-750wg",
+    "slug_original": "sach-benh-xanh-la-chuyen-tri-đao-on",
+    "category": "Thuốc trừ bệnh",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nTricyclazole 750g/kg\nPhụ gia đặc biệt vừa đủ 1kg",
+    "specs": [
+      {
+        "key": "Gói",
+        "value": "25g"
+      },
+      {
+        "key": "Gói",
+        "value": "100g"
+      }
+    ],
+    "thumbnail": "images/BEMSUPER25MTok.jpg",
+    "images": [
+      "images/BEMSUPER25MTok.jpg",
+      "images/BEMSUPER25MS.jpg",
+      "images/1e1b6f794c10b64eef01test.jpg",
+      "images/BEMSUPER100MS.jpg"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/sach-benh-xanh-la-chuyen-tri-%C4%91ao-on"
+  },
+  {
+    "name": "PHENOCID 20WP",
+    "slug": "phenocid-20wp",
+    "slug_original": "thuoc-oc",
+    "category": "Thuốc Trừ Nhuyễn Thể",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt chất:\nSaponin 20%",
+    "specs": [],
+    "thumbnail": "images/phenocide1.jpg",
+    "images": [
+      "images/phenocide1.jpg",
+      "images/phenocide2.jpg"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/thuoc-oc"
+  },
+  {
+    "name": "FUZIN 40EC",
+    "slug": "fuzin-40ec",
+    "slug_original": "đac-tri-đao-on-khong-mui-hoi",
+    "category": "Thuốc trừ bệnh",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất\nIsoprothiolane: 400g/L\nPhụ gia và dung môi: Vừa đủ 1L",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "450ml"
+      }
+    ],
+    "thumbnail": "images/FUZINchai450ML.png",
+    "images": [
+      "images/FUZINchai450ML.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/%C4%91ac-tri-%C4%91ao-on-khong-mui-hoi"
+  },
+  {
+    "name": "ETOBON 0.56SL",
+    "slug": "etobon-0-56sl",
+    "slug_original": "ra-re-cuc-manh",
+    "category": "Thuốc Kích Thích Sinh Trưởng",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất\nZeatin: 0.56g/L\nSpecial Additive: 50g/L\nDung môi: Vừa đủ 1L",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "100ml"
+      }
+    ],
+    "thumbnail": "images/ETOBON.jpg",
+    "images": [
+      "images/ETOBON.jpg",
+      "images/ETOBONmt.png",
+      "images/ETOBONms.png",
+      "images/hopetobon1.PNG",
+      "images/hopetobon2.PNG"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/ra-re-cuc-manh"
+  },
+  {
+    "name": "Bình Phun Thuốc Tự Động",
+    "slug": "binh-phun-thuoc-tu-dong",
+    "slug_original": "thong-so-ky-thuat",
+    "category": "Máy và Thiết Bị Nông Nghiệp",
+    "subtitle": "",
+    "description": "Dung tích tối đa: 18 L\nẮc quy: 12V/7.2Ah/20HR\nÁp lực phun: 100 PSI\nLưu lượng: 4L/phút.\nThời gian sạc điện: 4-5 giờ\nThời gian sử dụng sau khi sạc đầy: 5-8 giờ",
+    "specs": [
+      {
+        "key": "Dung tích tối đa",
+        "value": "18L"
+      }
+    ],
+    "thumbnail": "images/MatTruoc.png",
+    "images": [
+      "images/MatTruoc.png",
+      "images/MatSau.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/thong-so-ky-thuat"
+  },
+  {
+    "name": "ALULINETTE 50EC",
+    "slug": "alulinette-50ec",
+    "slug_original": "thuoc-tru-sau-ho-van",
+    "category": "Thuốc trừ sâu",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nChlorfluazuzon: 50g/L\nSpecial Additive\nDung môi: vừa đủ 1L",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "250ml"
+      },
+      {
+        "key": "Chai",
+        "value": "500ml"
+      }
+    ],
+    "thumbnail": "images/ALULINETTEchai250ML1.ok.png",
+    "images": [
+      "images/ALULINETTEchai250ML1.ok.png",
+      "images/ALULINETTEchai500ML.ok.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/thuoc-tru-sau-ho-van"
+  },
+  {
+    "name": "FIXTEX 300EC",
+    "slug": "fixtex-300ec",
+    "slug_original": "thuoc-tru-sau-fitex",
+    "category": "Thuốc trừ sâu",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nDimethoate: 286g/L\nLambda-cyhalothin: 14g/L\nPhụ gia chuyên dụng; vừa đủ 1L",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "500ml"
+      }
+    ],
+    "thumbnail": "images/FITEXchai500ML.png",
+    "images": [
+      "images/FITEXchai500ML.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/thuoc-tru-sau-fitex"
+  },
+  {
+    "name": "JAPENRA 666EC",
+    "slug": "japenra-666ec",
+    "slug_original": "san-pham-cua-an-đo",
+    "category": "Thuốc trừ sâu",
+    "subtitle": "",
+    "description": "Thành Phần Hoạt Chất:\nEmamectin: 25g/L\nChlorpyrifos Ethyl: 300g/L\nFenobucarb: 341g/L\nPhụ gia chuyên dụng: Vừa đủ 1L",
+    "specs": [
+      {
+        "key": "Chai",
+        "value": "200ml"
+      },
+      {
+        "key": "Chai",
+        "value": "200ml"
+      }
+    ],
+    "thumbnail": "images/JAPENRAchai200ML.OK.png",
+    "images": [
+      "images/JAPENRAchai200ML.OK.png",
+      "images/JAPENRAchai500ML.OK.png"
+    ],
+    "source_url": "https://www.duocmua.vn/vn/chitietsanpham/san-pham-cua-an-%C4%91o"
+  }
+]

@@ -1,0 +1,5341 @@
+openapi: 3.0.3
+info:
+  title: Duoc Mua API
+  version: 1.0.0
+  description: API for Duoc Mua agricultural e-commerce website.
+paths:
+  /api/account/addresses/:
+    get:
+      operationId: account_addresses_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - account
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAddressList'
+          description: ''
+    post:
+      operationId: account_addresses_create
+      tags:
+      - account
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Address'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Address'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Address'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Address'
+          description: ''
+  /api/account/addresses/{id}/:
+    get:
+      operationId: account_addresses_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - account
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Address'
+          description: ''
+    put:
+      operationId: account_addresses_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - account
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Address'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Address'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Address'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Address'
+          description: ''
+    patch:
+      operationId: account_addresses_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - account
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAddress'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAddress'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAddress'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Address'
+          description: ''
+    delete:
+      operationId: account_addresses_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - account
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/account/profile/:
+    get:
+      operationId: account_profile_retrieve
+      tags:
+      - account
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+          description: ''
+    put:
+      operationId: account_profile_update
+      tags:
+      - account
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProfile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserProfile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserProfile'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+          description: ''
+    patch:
+      operationId: account_profile_partial_update
+      tags:
+      - account
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUserProfile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUserProfile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUserProfile'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+          description: ''
+  /api/admin/banners/:
+    get:
+      operationId: admin_banners_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminBannerList'
+          description: ''
+    post:
+      operationId: admin_banners_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminBanner'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminBanner'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminBanner'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminBanner'
+          description: ''
+  /api/admin/banners/{id}/:
+    get:
+      operationId: admin_banners_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this banner.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminBanner'
+          description: ''
+    put:
+      operationId: admin_banners_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this banner.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminBanner'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminBanner'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminBanner'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminBanner'
+          description: ''
+    patch:
+      operationId: admin_banners_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this banner.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminBanner'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminBanner'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminBanner'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminBanner'
+          description: ''
+    delete:
+      operationId: admin_banners_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this banner.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/categories/:
+    get:
+      operationId: admin_categories_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminCategoryList'
+          description: ''
+    post:
+      operationId: admin_categories_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminCategory'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminCategory'
+          description: ''
+  /api/admin/categories/{id}/:
+    get:
+      operationId: admin_categories_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminCategory'
+          description: ''
+    put:
+      operationId: admin_categories_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminCategory'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminCategory'
+          description: ''
+    patch:
+      operationId: admin_categories_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminCategory'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminCategory'
+          description: ''
+    delete:
+      operationId: admin_categories_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this category.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/contacts/:
+    get:
+      operationId: admin_contacts_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminContactSubmissionList'
+          description: ''
+    post:
+      operationId: admin_contacts_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminContactSubmission'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminContactSubmission'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminContactSubmission'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminContactSubmission'
+          description: ''
+  /api/admin/contacts/{id}/:
+    get:
+      operationId: admin_contacts_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this contact submission.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminContactSubmission'
+          description: ''
+    put:
+      operationId: admin_contacts_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this contact submission.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminContactSubmission'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminContactSubmission'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminContactSubmission'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminContactSubmission'
+          description: ''
+    patch:
+      operationId: admin_contacts_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this contact submission.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminContactSubmission'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminContactSubmission'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminContactSubmission'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminContactSubmission'
+          description: ''
+    delete:
+      operationId: admin_contacts_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this contact submission.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/document-categories/:
+    get:
+      operationId: admin_document_categories_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminDocCategoryList'
+          description: ''
+    post:
+      operationId: admin_document_categories_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminDocCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminDocCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminDocCategory'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminDocCategory'
+          description: ''
+  /api/admin/document-categories/{id}/:
+    get:
+      operationId: admin_document_categories_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this document category.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminDocCategory'
+          description: ''
+    put:
+      operationId: admin_document_categories_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this document category.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminDocCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminDocCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminDocCategory'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminDocCategory'
+          description: ''
+    patch:
+      operationId: admin_document_categories_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this document category.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminDocCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminDocCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminDocCategory'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminDocCategory'
+          description: ''
+    delete:
+      operationId: admin_document_categories_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this document category.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/documents/:
+    get:
+      operationId: admin_documents_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminDocumentList'
+          description: ''
+    post:
+      operationId: admin_documents_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminDocument'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminDocument'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminDocument'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminDocument'
+          description: ''
+  /api/admin/documents/{slug}/:
+    get:
+      operationId: admin_documents_retrieve
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminDocument'
+          description: ''
+    put:
+      operationId: admin_documents_update
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminDocument'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminDocument'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminDocument'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminDocument'
+          description: ''
+    patch:
+      operationId: admin_documents_partial_update
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminDocument'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminDocument'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminDocument'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminDocument'
+          description: ''
+    delete:
+      operationId: admin_documents_destroy
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/hashtags/:
+    get:
+      operationId: admin_hashtags_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminHashtagList'
+          description: ''
+    post:
+      operationId: admin_hashtags_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminHashtag'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminHashtag'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminHashtag'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminHashtag'
+          description: ''
+  /api/admin/hashtags/{id}/:
+    get:
+      operationId: admin_hashtags_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this hashtag.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminHashtag'
+          description: ''
+    put:
+      operationId: admin_hashtags_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this hashtag.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminHashtag'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminHashtag'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminHashtag'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminHashtag'
+          description: ''
+    patch:
+      operationId: admin_hashtags_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this hashtag.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminHashtag'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminHashtag'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminHashtag'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminHashtag'
+          description: ''
+    delete:
+      operationId: admin_hashtags_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this hashtag.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/news/:
+    get:
+      operationId: admin_news_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminArticleList'
+          description: ''
+    post:
+      operationId: admin_news_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminArticle'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminArticle'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminArticle'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminArticle'
+          description: ''
+  /api/admin/news-categories/:
+    get:
+      operationId: admin_news_categories_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminNewsCategoryList'
+          description: ''
+    post:
+      operationId: admin_news_categories_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminNewsCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminNewsCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminNewsCategory'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminNewsCategory'
+          description: ''
+  /api/admin/news-categories/{id}/:
+    get:
+      operationId: admin_news_categories_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this news category.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminNewsCategory'
+          description: ''
+    put:
+      operationId: admin_news_categories_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this news category.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminNewsCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminNewsCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminNewsCategory'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminNewsCategory'
+          description: ''
+    patch:
+      operationId: admin_news_categories_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this news category.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminNewsCategory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminNewsCategory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminNewsCategory'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminNewsCategory'
+          description: ''
+    delete:
+      operationId: admin_news_categories_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this news category.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/news/{slug}/:
+    get:
+      operationId: admin_news_retrieve
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminArticle'
+          description: ''
+    put:
+      operationId: admin_news_update
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminArticle'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminArticle'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminArticle'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminArticle'
+          description: ''
+    patch:
+      operationId: admin_news_partial_update
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminArticle'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminArticle'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminArticle'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminArticle'
+          description: ''
+    delete:
+      operationId: admin_news_destroy
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/orders/:
+    get:
+      operationId: admin_orders_list
+      parameters:
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminOrderList'
+          description: ''
+  /api/admin/orders/{order_number}/:
+    get:
+      operationId: admin_orders_retrieve
+      parameters:
+      - in: path
+        name: order_number
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminOrder'
+          description: ''
+  /api/admin/orders/{order_number}/status/:
+    patch:
+      operationId: admin_orders_status_partial_update
+      parameters:
+      - in: path
+        name: order_number
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminOrder'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminOrder'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminOrder'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminOrder'
+          description: ''
+  /api/admin/orders/export/:
+    get:
+      operationId: admin_orders_export_retrieve
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminOrder'
+          description: ''
+  /api/admin/plants/:
+    get:
+      operationId: admin_plants_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminPlantList'
+          description: ''
+    post:
+      operationId: admin_plants_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminPlant'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminPlant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminPlant'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPlant'
+          description: ''
+  /api/admin/plants/{id}/:
+    get:
+      operationId: admin_plants_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this plant.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPlant'
+          description: ''
+    put:
+      operationId: admin_plants_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this plant.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminPlant'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminPlant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminPlant'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPlant'
+          description: ''
+    patch:
+      operationId: admin_plants_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this plant.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminPlant'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminPlant'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminPlant'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPlant'
+          description: ''
+    delete:
+      operationId: admin_plants_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this plant.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/products/:
+    get:
+      operationId: admin_products_list
+      parameters:
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminProductList'
+          description: ''
+    post:
+      operationId: admin_products_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminProduct'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminProduct'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminProduct'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminProduct'
+          description: ''
+  /api/admin/products/{slug}/:
+    get:
+      operationId: admin_products_retrieve
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminProduct'
+          description: ''
+    put:
+      operationId: admin_products_update
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminProduct'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminProduct'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminProduct'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminProduct'
+          description: ''
+    patch:
+      operationId: admin_products_partial_update
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProduct'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProduct'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProduct'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminProduct'
+          description: ''
+    delete:
+      operationId: admin_products_destroy
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/promotions/:
+    get:
+      operationId: admin_promotions_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminPromotionList'
+          description: ''
+    post:
+      operationId: admin_promotions_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminPromotion'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminPromotion'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminPromotion'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPromotion'
+          description: ''
+  /api/admin/promotions/{id}/:
+    get:
+      operationId: admin_promotions_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this promotion.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPromotion'
+          description: ''
+    put:
+      operationId: admin_promotions_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this promotion.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminPromotion'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminPromotion'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminPromotion'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPromotion'
+          description: ''
+    patch:
+      operationId: admin_promotions_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this promotion.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminPromotion'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminPromotion'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminPromotion'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPromotion'
+          description: ''
+    delete:
+      operationId: admin_promotions_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this promotion.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/reviews/:
+    get:
+      operationId: admin_reviews_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminProductReviewList'
+          description: ''
+    post:
+      operationId: admin_reviews_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminProductReview'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminProductReview'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminProductReview'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminProductReview'
+          description: ''
+  /api/admin/reviews/{id}/:
+    get:
+      operationId: admin_reviews_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product review.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminProductReview'
+          description: ''
+    put:
+      operationId: admin_reviews_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product review.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminProductReview'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminProductReview'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminProductReview'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminProductReview'
+          description: ''
+    patch:
+      operationId: admin_reviews_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product review.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProductReview'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProductReview'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProductReview'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminProductReview'
+          description: ''
+    delete:
+      operationId: admin_reviews_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product review.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/reviews/{id}/approve/:
+    patch:
+      operationId: admin_reviews_approve_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product review.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProductReview'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProductReview'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProductReview'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminProductReview'
+          description: ''
+  /api/admin/reviews/{id}/reject/:
+    patch:
+      operationId: admin_reviews_reject_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product review.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProductReview'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProductReview'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminProductReview'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminProductReview'
+          description: ''
+  /api/admin/site-config/:
+    get:
+      operationId: admin_site_config_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminSiteConfigList'
+          description: ''
+    post:
+      operationId: admin_site_config_create
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminSiteConfig'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminSiteConfig'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminSiteConfig'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminSiteConfig'
+          description: ''
+  /api/admin/site-config/{id}/:
+    get:
+      operationId: admin_site_config_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this site config.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminSiteConfig'
+          description: ''
+    put:
+      operationId: admin_site_config_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this site config.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminSiteConfig'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AdminSiteConfig'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AdminSiteConfig'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminSiteConfig'
+          description: ''
+    patch:
+      operationId: admin_site_config_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this site config.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminSiteConfig'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminSiteConfig'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminSiteConfig'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminSiteConfig'
+          description: ''
+    delete:
+      operationId: admin_site_config_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this site config.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/admin/stats/:
+    get:
+      operationId: admin_stats_retrieve
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminStats'
+          description: ''
+  /api/admin/users/:
+    get:
+      operationId: admin_users_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAdminUserList'
+          description: ''
+  /api/admin/users/{id}/:
+    get:
+      operationId: admin_users_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this người dùng.
+        required: true
+      tags:
+      - admin
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminUser'
+          description: ''
+  /api/admin/users/{id}/toggle-active/:
+    patch:
+      operationId: admin_users_toggle_active_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this người dùng.
+        required: true
+      tags:
+      - admin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminUser'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminUser'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdminUser'
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminUser'
+          description: ''
+  /api/categories/:
+    get:
+      operationId: categories_list
+      tags:
+      - categories
+      security:
+      - FirebaseAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+          description: ''
+  /api/config/:
+    get:
+      operationId: config_retrieve
+      tags:
+      - config
+      security:
+      - FirebaseAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SiteConfig'
+          description: ''
+  /api/contact/:
+    post:
+      operationId: contact_create
+      tags:
+      - contact
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactSubmission'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ContactSubmission'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ContactSubmission'
+        required: true
+      security:
+      - FirebaseAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactSubmission'
+          description: ''
+  /api/documents/:
+    get:
+      operationId: documents_list
+      parameters:
+      - in: query
+        name: category
+        schema:
+          type: string
+      - in: query
+        name: doc_type
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - in: query
+        name: plants
+        schema:
+          type: string
+      - in: query
+        name: search
+        schema:
+          type: string
+      tags:
+      - documents
+      security:
+      - FirebaseAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedDocumentListList'
+          description: ''
+  /api/documents/{slug}/:
+    get:
+      operationId: documents_retrieve
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - documents
+      security:
+      - FirebaseAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentDetail'
+          description: ''
+  /api/news/:
+    get:
+      operationId: news_list
+      parameters:
+      - in: query
+        name: category
+        schema:
+          type: string
+      - in: query
+        name: hashtag
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - in: query
+        name: search
+        schema:
+          type: string
+      tags:
+      - news
+      security:
+      - FirebaseAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedArticleListList'
+          description: ''
+  /api/news/{slug}/:
+    get:
+      operationId: news_retrieve
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - news
+      security:
+      - FirebaseAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArticleDetail'
+          description: ''
+  /api/orders/:
+    get:
+      operationId: orders_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - orders
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedOrderDetailList'
+          description: ''
+    post:
+      operationId: orders_create
+      tags:
+      - orders
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OrderCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OrderCreate'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderCreate'
+          description: ''
+  /api/orders/{order_number}/:
+    get:
+      operationId: orders_retrieve
+      parameters:
+      - in: path
+        name: order_number
+        schema:
+          type: string
+        required: true
+      tags:
+      - orders
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderDetail'
+          description: ''
+  /api/orders/{order_number}/cancel/:
+    post:
+      operationId: orders_cancel_create
+      parameters:
+      - in: path
+        name: order_number
+        schema:
+          type: string
+        required: true
+      tags:
+      - orders
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderDetail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/OrderDetail'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/OrderDetail'
+        required: true
+      security:
+      - FirebaseAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderDetail'
+          description: ''
+  /api/plants/:
+    get:
+      operationId: plants_list
+      tags:
+      - plants
+      security:
+      - FirebaseAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Plant'
+          description: ''
+  /api/products/:
+    get:
+      operationId: products_list
+      parameters:
+      - in: query
+        name: category
+        schema:
+          type: string
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - in: query
+        name: plants
+        schema:
+          type: string
+      - in: query
+        name: search
+        schema:
+          type: string
+      - in: query
+        name: tag
+        schema:
+          type: string
+      tags:
+      - products
+      security:
+      - FirebaseAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedProductListList'
+          description: ''
+  /api/products/{slug}/:
+    get:
+      operationId: products_retrieve
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - products
+      security:
+      - FirebaseAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductDetail'
+          description: ''
+  /api/schema/:
+    get:
+      operationId: schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - ht
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - ug
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - schema
+      security:
+      - FirebaseAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+components:
+  schemas:
+    Address:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        label:
+          type: string
+          maxLength: 80
+        receiver_name:
+          type: string
+          maxLength: 150
+        phone:
+          type: string
+          maxLength: 30
+        address_line:
+          type: string
+        province:
+          type: integer
+          nullable: true
+        province_detail:
+          allOf:
+          - $ref: '#/components/schemas/Province'
+          readOnly: true
+        commune:
+          type: integer
+          nullable: true
+        commune_detail:
+          allOf:
+          - $ref: '#/components/schemas/Commune'
+          readOnly: true
+        is_default:
+          type: boolean
+      required:
+      - address_line
+      - commune_detail
+      - id
+      - label
+      - phone
+      - province_detail
+      - receiver_name
+    AdminArticle:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 240
+        slug:
+          type: string
+          maxLength: 260
+          pattern: ^[-a-zA-Z0-9_]+$
+        thumbnail:
+          type: string
+          format: uri
+        summary:
+          type: string
+          maxLength: 300
+        content:
+          type: string
+        is_published:
+          type: boolean
+        published_at:
+          type: string
+          format: date-time
+          nullable: true
+        view_count:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        category:
+          type: integer
+        author:
+          type: integer
+        hashtags:
+          type: array
+          items:
+            type: integer
+      required:
+      - author
+      - category
+      - content
+      - created_at
+      - id
+      - slug
+      - summary
+      - title
+      - updated_at
+    AdminBanner:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 180
+        subtitle:
+          type: string
+          maxLength: 240
+        image:
+          type: string
+          format: uri
+        link:
+          type: string
+          format: uri
+          maxLength: 200
+        order:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        is_active:
+          type: boolean
+        tag:
+          type: string
+          maxLength: 100
+        bg_color:
+          type: string
+          maxLength: 255
+      required:
+      - id
+      - title
+    AdminCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+        color:
+          type: string
+          maxLength: 32
+        icon:
+          type: string
+          maxLength: 80
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created_at
+      - id
+      - name
+      - slug
+    AdminContactSubmission:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 150
+        phone:
+          type: string
+          maxLength: 30
+        email:
+          type: string
+          format: email
+          nullable: true
+          maxLength: 254
+        message:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        is_read:
+          type: boolean
+      required:
+      - created_at
+      - id
+      - message
+      - name
+      - phone
+    AdminDocCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+      required:
+      - id
+      - name
+      - slug
+    AdminDocument:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 240
+        slug:
+          type: string
+          maxLength: 260
+          pattern: ^[-a-zA-Z0-9_]+$
+        doc_type:
+          $ref: '#/components/schemas/DocTypeEnum'
+        thumbnail:
+          type: string
+          format: uri
+        summary:
+          type: string
+          maxLength: 300
+        content:
+          type: string
+        file:
+          type: string
+          format: uri
+          nullable: true
+        video_url:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 200
+        is_published:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        category:
+          type: integer
+        plants:
+          type: array
+          items:
+            type: integer
+      required:
+      - category
+      - created_at
+      - doc_type
+      - id
+      - slug
+      - summary
+      - title
+      - updated_at
+    AdminHashtag:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 80
+      required:
+      - id
+      - name
+    AdminNewsCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+      required:
+      - id
+      - name
+      - slug
+    AdminOrder:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        user:
+          type: integer
+          nullable: true
+        user_email:
+          type: string
+          format: email
+          readOnly: true
+        order_number:
+          type: string
+          maxLength: 20
+        status:
+          $ref: '#/components/schemas/StatusE02Enum'
+        payment_method:
+          $ref: '#/components/schemas/PaymentMethodEnum'
+        payment_status:
+          $ref: '#/components/schemas/PaymentStatusEnum'
+        receiver_name:
+          type: string
+          maxLength: 150
+        receiver_phone:
+          type: string
+          maxLength: 30
+        receiver_address:
+          type: string
+        subtotal:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        shipping_fee:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        total:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        note:
+          type: string
+        vnpay_txn_ref:
+          type: string
+          nullable: true
+          maxLength: 100
+        momo_txn_ref:
+          type: string
+          nullable: true
+          maxLength: 100
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminOrderItem'
+          readOnly: true
+      required:
+      - created_at
+      - id
+      - items
+      - receiver_address
+      - receiver_name
+      - receiver_phone
+      - updated_at
+      - user_email
+    AdminOrderItem:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        product:
+          type: integer
+        product_name:
+          type: string
+          maxLength: 220
+        product_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        quantity:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        subtotal:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+          readOnly: true
+      required:
+      - id
+      - product
+      - product_name
+      - product_price
+      - subtotal
+    AdminPlant:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+      required:
+      - id
+      - name
+      - slug
+    AdminProduct:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 220
+        slug:
+          type: string
+          maxLength: 240
+          pattern: ^[-a-zA-Z0-9_]+$
+        tag:
+          oneOf:
+          - $ref: '#/components/schemas/TagEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        sale_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+          nullable: true
+        specs: {}
+        description:
+          type: string
+        usage:
+          type: string
+        guide:
+          type: string
+        thumbnail:
+          type: string
+          format: uri
+        sale_count:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        is_active:
+          type: boolean
+        sort_order:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        category:
+          type: integer
+        plants:
+          type: array
+          items:
+            type: integer
+      required:
+      - category
+      - created_at
+      - id
+      - name
+      - price
+      - slug
+      - updated_at
+    AdminProductReview:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        product:
+          type: integer
+        product_name:
+          type: string
+          readOnly: true
+        user:
+          type: integer
+        user_email:
+          type: string
+          format: email
+          readOnly: true
+        rating:
+          type: integer
+          maximum: 5
+          minimum: 1
+        text:
+          type: string
+        status:
+          $ref: '#/components/schemas/AdminProductReviewStatusEnum'
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created_at
+      - id
+      - product
+      - product_name
+      - rating
+      - text
+      - user
+      - user_email
+    AdminProductReviewStatusEnum:
+      enum:
+      - pending
+      - approved
+      - rejected
+      type: string
+      description: |-
+        * `pending` - Pending
+        * `approved` - Approved
+        * `rejected` - Rejected
+    AdminPromotion:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        code:
+          type: string
+          maxLength: 50
+        name:
+          type: string
+          maxLength: 150
+        discount_type:
+          $ref: '#/components/schemas/DiscountTypeEnum'
+        discount_value:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        min_order_value:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        start_date:
+          type: string
+          format: date
+        end_date:
+          type: string
+          format: date
+        usage_limit:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+        used_count:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        is_active:
+          type: boolean
+      required:
+      - code
+      - discount_type
+      - discount_value
+      - end_date
+      - id
+      - name
+      - start_date
+    AdminSiteConfig:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        hotline:
+          type: string
+          maxLength: 50
+        zalo_url:
+          type: string
+          format: uri
+          maxLength: 200
+        facebook_url:
+          type: string
+          format: uri
+          maxLength: 200
+        address:
+          type: string
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        google_map_embed:
+          type: string
+        policy_buying:
+          type: string
+        policy_shipping:
+          type: string
+      required:
+      - id
+    AdminStats:
+      type: object
+      properties:
+        orders:
+          type: integer
+        revenue:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        customers:
+          type: integer
+        products:
+          type: integer
+        recent_orders:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminOrder'
+        new_users:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminUser'
+        orders_by_status:
+          type: object
+          additionalProperties:
+            type: integer
+      required:
+      - customers
+      - new_users
+      - orders
+      - orders_by_status
+      - products
+      - recent_orders
+      - revenue
+    AdminUser:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        username:
+          type: string
+          readOnly: true
+          title: Tên đăng nhập
+          description: Yêu cầu. 150 ký tự hoặc ít hơn. Chỉ là chữ cái, chữ số và @/./+/-/_.
+        email:
+          type: string
+          format: email
+          title: Địa chỉ email
+          maxLength: 254
+        first_name:
+          type: string
+          title: Tên
+          maxLength: 150
+        last_name:
+          type: string
+          title: Họ
+          maxLength: 150
+        is_active:
+          type: boolean
+          title: Kích hoạt
+          description: Chỉ định xem người dùng này phải được coi là đang hoạt động.
+            Bạn nên bỏ chọn này thay vì xóa tài khoản.
+        is_staff:
+          type: boolean
+          title: Tình trạng nhân viên
+          description: Chỉ định người dùng nào được phép truy cập vào trang admin.
+        date_joined:
+          type: string
+          format: date-time
+          readOnly: true
+          title: Ngày tham gia
+      required:
+      - date_joined
+      - id
+      - username
+    ArticleDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 240
+        slug:
+          type: string
+          maxLength: 260
+          pattern: ^[-a-zA-Z0-9_]+$
+        category:
+          allOf:
+          - $ref: '#/components/schemas/NewsCategory'
+          readOnly: true
+        hashtags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Hashtag'
+          readOnly: true
+        thumbnail:
+          type: string
+          format: uri
+        summary:
+          type: string
+          maxLength: 300
+        author_name:
+          type: string
+          readOnly: true
+        published_at:
+          type: string
+          format: date-time
+          nullable: true
+        view_count:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        content:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - author_name
+      - category
+      - content
+      - created_at
+      - hashtags
+      - id
+      - slug
+      - summary
+      - title
+      - updated_at
+    ArticleList:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 240
+        slug:
+          type: string
+          maxLength: 260
+          pattern: ^[-a-zA-Z0-9_]+$
+        category:
+          allOf:
+          - $ref: '#/components/schemas/NewsCategory'
+          readOnly: true
+        hashtags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Hashtag'
+          readOnly: true
+        thumbnail:
+          type: string
+          format: uri
+        summary:
+          type: string
+          maxLength: 300
+        author_name:
+          type: string
+          readOnly: true
+        published_at:
+          type: string
+          format: date-time
+          nullable: true
+        view_count:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+      required:
+      - author_name
+      - category
+      - hashtags
+      - id
+      - slug
+      - summary
+      - title
+    BlankEnum:
+      enum:
+      - ''
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+        color:
+          type: string
+          maxLength: 32
+        icon:
+          type: string
+          maxLength: 80
+      required:
+      - id
+      - name
+      - slug
+    Commune:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        code:
+          type: string
+          maxLength: 20
+        name:
+          type: string
+          maxLength: 150
+        province:
+          allOf:
+          - $ref: '#/components/schemas/Province'
+          readOnly: true
+      required:
+      - code
+      - id
+      - name
+      - province
+    ContactSubmission:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 150
+        phone:
+          type: string
+          maxLength: 30
+        email:
+          type: string
+          format: email
+          nullable: true
+          maxLength: 254
+        message:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created_at
+      - id
+      - message
+      - name
+      - phone
+    DiscountTypeEnum:
+      enum:
+      - percent
+      - fixed
+      type: string
+      description: |-
+        * `percent` - Percent
+        * `fixed` - Fixed amount
+    DocCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+      required:
+      - id
+      - name
+      - slug
+    DocTypeEnum:
+      enum:
+      - paper
+      - video
+      type: string
+      description: |-
+        * `paper` - Paper
+        * `video` - Video
+    DocumentDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 240
+        slug:
+          type: string
+          maxLength: 260
+          pattern: ^[-a-zA-Z0-9_]+$
+        doc_type:
+          $ref: '#/components/schemas/DocTypeEnum'
+        category:
+          allOf:
+          - $ref: '#/components/schemas/DocCategory'
+          readOnly: true
+        plants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Plant'
+          readOnly: true
+        thumbnail:
+          type: string
+          format: uri
+        summary:
+          type: string
+          maxLength: 300
+        file:
+          type: string
+          format: uri
+          nullable: true
+        video_url:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 200
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        content:
+          type: string
+        is_published:
+          type: boolean
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - category
+      - created_at
+      - doc_type
+      - id
+      - plants
+      - slug
+      - summary
+      - title
+      - updated_at
+    DocumentList:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 240
+        slug:
+          type: string
+          maxLength: 260
+          pattern: ^[-a-zA-Z0-9_]+$
+        doc_type:
+          $ref: '#/components/schemas/DocTypeEnum'
+        category:
+          allOf:
+          - $ref: '#/components/schemas/DocCategory'
+          readOnly: true
+        plants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Plant'
+          readOnly: true
+        thumbnail:
+          type: string
+          format: uri
+        summary:
+          type: string
+          maxLength: 300
+        file:
+          type: string
+          format: uri
+          nullable: true
+        video_url:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 200
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - category
+      - created_at
+      - doc_type
+      - id
+      - plants
+      - slug
+      - summary
+      - title
+    Hashtag:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 80
+      required:
+      - id
+      - name
+    NewsCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+      required:
+      - id
+      - name
+      - slug
+    OrderCreate:
+      type: object
+      properties:
+        order_number:
+          type: string
+          readOnly: true
+        payment_method:
+          $ref: '#/components/schemas/PaymentMethodEnum'
+        receiver_name:
+          type: string
+          maxLength: 150
+        receiver_phone:
+          type: string
+          maxLength: 30
+        receiver_address:
+          type: string
+        note:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderCreateItem'
+          writeOnly: true
+      required:
+      - items
+      - order_number
+      - receiver_address
+      - receiver_name
+      - receiver_phone
+    OrderCreateItem:
+      type: object
+      properties:
+        product:
+          type: integer
+        quantity:
+          type: integer
+          minimum: 1
+      required:
+      - product
+      - quantity
+    OrderDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        order_number:
+          type: string
+          maxLength: 20
+        status:
+          $ref: '#/components/schemas/StatusE02Enum'
+        payment_method:
+          $ref: '#/components/schemas/PaymentMethodEnum'
+        payment_status:
+          $ref: '#/components/schemas/PaymentStatusEnum'
+        receiver_name:
+          type: string
+          maxLength: 150
+        receiver_phone:
+          type: string
+          maxLength: 30
+        receiver_address:
+          type: string
+        subtotal:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        shipping_fee:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        total:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        note:
+          type: string
+        vnpay_txn_ref:
+          type: string
+          nullable: true
+          maxLength: 100
+        momo_txn_ref:
+          type: string
+          nullable: true
+          maxLength: 100
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+          readOnly: true
+      required:
+      - created_at
+      - id
+      - items
+      - receiver_address
+      - receiver_name
+      - receiver_phone
+      - updated_at
+    OrderItem:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        product:
+          type: integer
+        product_name:
+          type: string
+          readOnly: true
+        product_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+          readOnly: true
+        quantity:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        subtotal:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+          readOnly: true
+      required:
+      - id
+      - product
+      - product_name
+      - product_price
+      - subtotal
+    PaginatedAddressList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+    PaginatedAdminArticleList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminArticle'
+    PaginatedAdminBannerList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminBanner'
+    PaginatedAdminCategoryList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminCategory'
+    PaginatedAdminContactSubmissionList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminContactSubmission'
+    PaginatedAdminDocCategoryList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminDocCategory'
+    PaginatedAdminDocumentList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminDocument'
+    PaginatedAdminHashtagList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminHashtag'
+    PaginatedAdminNewsCategoryList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminNewsCategory'
+    PaginatedAdminOrderList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminOrder'
+    PaginatedAdminPlantList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminPlant'
+    PaginatedAdminProductList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminProduct'
+    PaginatedAdminProductReviewList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminProductReview'
+    PaginatedAdminPromotionList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminPromotion'
+    PaginatedAdminSiteConfigList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminSiteConfig'
+    PaginatedAdminUserList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminUser'
+    PaginatedArticleListList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ArticleList'
+    PaginatedDocumentListList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentList'
+    PaginatedOrderDetailList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderDetail'
+    PaginatedProductListList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductList'
+    PatchedAddress:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        label:
+          type: string
+          maxLength: 80
+        receiver_name:
+          type: string
+          maxLength: 150
+        phone:
+          type: string
+          maxLength: 30
+        address_line:
+          type: string
+        province:
+          type: integer
+          nullable: true
+        province_detail:
+          allOf:
+          - $ref: '#/components/schemas/Province'
+          readOnly: true
+        commune:
+          type: integer
+          nullable: true
+        commune_detail:
+          allOf:
+          - $ref: '#/components/schemas/Commune'
+          readOnly: true
+        is_default:
+          type: boolean
+    PatchedAdminArticle:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 240
+        slug:
+          type: string
+          maxLength: 260
+          pattern: ^[-a-zA-Z0-9_]+$
+        thumbnail:
+          type: string
+          format: uri
+        summary:
+          type: string
+          maxLength: 300
+        content:
+          type: string
+        is_published:
+          type: boolean
+        published_at:
+          type: string
+          format: date-time
+          nullable: true
+        view_count:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        category:
+          type: integer
+        author:
+          type: integer
+        hashtags:
+          type: array
+          items:
+            type: integer
+    PatchedAdminBanner:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 180
+        subtitle:
+          type: string
+          maxLength: 240
+        image:
+          type: string
+          format: uri
+        link:
+          type: string
+          format: uri
+          maxLength: 200
+        order:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        is_active:
+          type: boolean
+        tag:
+          type: string
+          maxLength: 100
+        bg_color:
+          type: string
+          maxLength: 255
+    PatchedAdminCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+        color:
+          type: string
+          maxLength: 32
+        icon:
+          type: string
+          maxLength: 80
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+    PatchedAdminContactSubmission:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 150
+        phone:
+          type: string
+          maxLength: 30
+        email:
+          type: string
+          format: email
+          nullable: true
+          maxLength: 254
+        message:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        is_read:
+          type: boolean
+    PatchedAdminDocCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+    PatchedAdminDocument:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 240
+        slug:
+          type: string
+          maxLength: 260
+          pattern: ^[-a-zA-Z0-9_]+$
+        doc_type:
+          $ref: '#/components/schemas/DocTypeEnum'
+        thumbnail:
+          type: string
+          format: uri
+        summary:
+          type: string
+          maxLength: 300
+        content:
+          type: string
+        file:
+          type: string
+          format: uri
+          nullable: true
+        video_url:
+          type: string
+          format: uri
+          nullable: true
+          maxLength: 200
+        is_published:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        category:
+          type: integer
+        plants:
+          type: array
+          items:
+            type: integer
+    PatchedAdminHashtag:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 80
+    PatchedAdminNewsCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+    PatchedAdminOrder:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        user:
+          type: integer
+          nullable: true
+        user_email:
+          type: string
+          format: email
+          readOnly: true
+        order_number:
+          type: string
+          maxLength: 20
+        status:
+          $ref: '#/components/schemas/StatusE02Enum'
+        payment_method:
+          $ref: '#/components/schemas/PaymentMethodEnum'
+        payment_status:
+          $ref: '#/components/schemas/PaymentStatusEnum'
+        receiver_name:
+          type: string
+          maxLength: 150
+        receiver_phone:
+          type: string
+          maxLength: 30
+        receiver_address:
+          type: string
+        subtotal:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        shipping_fee:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        total:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        note:
+          type: string
+        vnpay_txn_ref:
+          type: string
+          nullable: true
+          maxLength: 100
+        momo_txn_ref:
+          type: string
+          nullable: true
+          maxLength: 100
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AdminOrderItem'
+          readOnly: true
+    PatchedAdminPlant:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+    PatchedAdminProduct:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 220
+        slug:
+          type: string
+          maxLength: 240
+          pattern: ^[-a-zA-Z0-9_]+$
+        tag:
+          oneOf:
+          - $ref: '#/components/schemas/TagEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        sale_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+          nullable: true
+        specs: {}
+        description:
+          type: string
+        usage:
+          type: string
+        guide:
+          type: string
+        thumbnail:
+          type: string
+          format: uri
+        sale_count:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        is_active:
+          type: boolean
+        sort_order:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        category:
+          type: integer
+        plants:
+          type: array
+          items:
+            type: integer
+    PatchedAdminProductReview:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        product:
+          type: integer
+        product_name:
+          type: string
+          readOnly: true
+        user:
+          type: integer
+        user_email:
+          type: string
+          format: email
+          readOnly: true
+        rating:
+          type: integer
+          maximum: 5
+          minimum: 1
+        text:
+          type: string
+        status:
+          $ref: '#/components/schemas/AdminProductReviewStatusEnum'
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+    PatchedAdminPromotion:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        code:
+          type: string
+          maxLength: 50
+        name:
+          type: string
+          maxLength: 150
+        discount_type:
+          $ref: '#/components/schemas/DiscountTypeEnum'
+        discount_value:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        min_order_value:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        start_date:
+          type: string
+          format: date
+        end_date:
+          type: string
+          format: date
+        usage_limit:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+        used_count:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        is_active:
+          type: boolean
+    PatchedAdminSiteConfig:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        hotline:
+          type: string
+          maxLength: 50
+        zalo_url:
+          type: string
+          format: uri
+          maxLength: 200
+        facebook_url:
+          type: string
+          format: uri
+          maxLength: 200
+        address:
+          type: string
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        google_map_embed:
+          type: string
+        policy_buying:
+          type: string
+        policy_shipping:
+          type: string
+    PatchedAdminUser:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        username:
+          type: string
+          readOnly: true
+          title: Tên đăng nhập
+          description: Yêu cầu. 150 ký tự hoặc ít hơn. Chỉ là chữ cái, chữ số và @/./+/-/_.
+        email:
+          type: string
+          format: email
+          title: Địa chỉ email
+          maxLength: 254
+        first_name:
+          type: string
+          title: Tên
+          maxLength: 150
+        last_name:
+          type: string
+          title: Họ
+          maxLength: 150
+        is_active:
+          type: boolean
+          title: Kích hoạt
+          description: Chỉ định xem người dùng này phải được coi là đang hoạt động.
+            Bạn nên bỏ chọn này thay vì xóa tài khoản.
+        is_staff:
+          type: boolean
+          title: Tình trạng nhân viên
+          description: Chỉ định người dùng nào được phép truy cập vào trang admin.
+        date_joined:
+          type: string
+          format: date-time
+          readOnly: true
+          title: Ngày tham gia
+    PatchedUserProfile:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+          readOnly: true
+        phone:
+          type: string
+          maxLength: 30
+        avatar:
+          type: string
+          format: uri
+        firebase_uid:
+          type: string
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+    PaymentMethodEnum:
+      enum:
+      - cod
+      - vnpay
+      - momo
+      type: string
+      description: |-
+        * `cod` - COD
+        * `vnpay` - VNPay
+        * `momo` - MoMo
+    PaymentStatusEnum:
+      enum:
+      - unpaid
+      - paid
+      - refunded
+      type: string
+      description: |-
+        * `unpaid` - Unpaid
+        * `paid` - Paid
+        * `refunded` - Refunded
+    Plant:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 120
+        slug:
+          type: string
+          maxLength: 140
+          pattern: ^[-a-zA-Z0-9_]+$
+      required:
+      - id
+      - name
+      - slug
+    ProductDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 220
+        slug:
+          type: string
+          maxLength: 240
+          pattern: ^[-a-zA-Z0-9_]+$
+        category:
+          allOf:
+          - $ref: '#/components/schemas/Category'
+          readOnly: true
+        plants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Plant'
+          readOnly: true
+        tag:
+          oneOf:
+          - $ref: '#/components/schemas/TagEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        sale_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+          nullable: true
+        specs: {}
+        description:
+          type: string
+        usage:
+          type: string
+        guide:
+          type: string
+        thumbnail:
+          type: string
+          format: uri
+          readOnly: true
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductImage'
+          readOnly: true
+        sale_count:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        is_active:
+          type: boolean
+        sort_order:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - category
+      - created_at
+      - id
+      - images
+      - name
+      - plants
+      - price
+      - slug
+      - thumbnail
+      - updated_at
+    ProductImage:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        image:
+          type: string
+          format: uri
+        order:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+      required:
+      - id
+      - image
+    ProductList:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 220
+        slug:
+          type: string
+          maxLength: 240
+          pattern: ^[-a-zA-Z0-9_]+$
+        tag:
+          oneOf:
+          - $ref: '#/components/schemas/TagEnum'
+          - $ref: '#/components/schemas/BlankEnum'
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+        sale_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,12}(?:\.\d{0,0})?$
+          nullable: true
+        thumbnail:
+          type: string
+          format: uri
+          readOnly: true
+        category:
+          allOf:
+          - $ref: '#/components/schemas/Category'
+          readOnly: true
+      required:
+      - category
+      - id
+      - name
+      - price
+      - slug
+      - thumbnail
+    Province:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        code:
+          type: string
+          maxLength: 20
+        name:
+          type: string
+          maxLength: 150
+      required:
+      - code
+      - id
+      - name
+    SiteConfig:
+      type: object
+      properties:
+        hotline:
+          type: string
+          maxLength: 50
+        zalo_url:
+          type: string
+          format: uri
+          maxLength: 200
+        facebook_url:
+          type: string
+          format: uri
+          maxLength: 200
+        address:
+          type: string
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        google_map_embed:
+          type: string
+        policy_buying:
+          type: string
+        policy_shipping:
+          type: string
+    StatusE02Enum:
+      enum:
+      - pending
+      - confirmed
+      - shipping
+      - delivered
+      - cancelled
+      type: string
+      description: |-
+        * `pending` - Pending
+        * `confirmed` - Confirmed
+        * `shipping` - Shipping
+        * `delivered` - Delivered
+        * `cancelled` - Cancelled
+    TagEnum:
+      enum:
+      - Bán chạy
+      - Mới
+      - Khuyến mãi
+      type: string
+      description: |-
+        * `` - Không có
+        * `Bán chạy` - Bán chạy
+        * `Mới` - Mới
+        * `Khuyến mãi` - Khuyến mãi
+    UserProfile:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+          readOnly: true
+        phone:
+          type: string
+          maxLength: 30
+        avatar:
+          type: string
+          format: uri
+        firebase_uid:
+          type: string
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created_at
+      - email
+      - firebase_uid
+  securitySchemes:
+    FirebaseAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Firebase ID token
