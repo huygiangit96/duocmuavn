@@ -12,9 +12,9 @@
 apt update && apt upgrade -y
 apt install -y git python3 python3-venv python3-pip postgresql postgresql-contrib
 
-# Node.js 20
+# Node.js 20 + npm
 curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-apt install -y nodejs
+apt install -y nodejs npm
 
 # PM2
 npm install -g pm2
@@ -39,9 +39,11 @@ cd /var/www/duocmua
 
 ```bash
 sudo -u postgres psql <<EOF
-CREATE USER duocmua WITH PASSWORD '123456';
+CREATE USER duocmua WITH PASSWORD '123456' CREATEDB;
 CREATE DATABASE duocmua OWNER duocmua;
 GRANT ALL PRIVILEGES ON DATABASE duocmua TO duocmua;
+\c duocmua
+GRANT ALL ON SCHEMA public TO duocmua;
 EOF
 
 # Import seed data
