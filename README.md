@@ -161,7 +161,7 @@ EOF
 
 pm2 start /var/www/duocmua/frontend/ecosystem.config.js
 pm2 save
-pm2 startup   # copy & chạy lệnh được in ra
+pm2 startup systemd -u root --hp /root
 ```
 
 ---
