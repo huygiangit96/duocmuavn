@@ -38,15 +38,13 @@ cd /var/www/duocmua
 ## 3. PostgreSQL — tạo DB & import seed
 
 ```bash
-sudo -u postgres psql <<EOF
-CREATE USER duocmua WITH PASSWORD '123456' CREATEDB;
-CREATE DATABASE duocmua OWNER duocmua;
-GRANT ALL PRIVILEGES ON DATABASE duocmua TO duocmua;
-\c duocmua
-GRANT ALL ON SCHEMA public TO duocmua;
-EOF
+# Đặt password cho postgres superuser
+sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 
-# Import seed data
+# Tạo database
+sudo -u postgres psql -c "CREATE DATABASE duocmua OWNER postgres;"
+
+# Import seed data (dùng postgres superuser để tránh lỗi permission)
 sudo -u postgres psql duocmua < /var/www/duocmua/scripts/data/duocmua_seed.sql
 ```
 
@@ -67,7 +65,7 @@ pip install -r requirements.txt
 # backend/.env
 DEBUG=False
 SECRET_KEY=duocmua-secret-key-change-in-production
-DATABASE_URL=postgres://duocmua:123456@localhost:5432/duocmua
+DATABASE_URL=postgres://postgres:postgres@localhost:5432/duocmua
 ALLOWED_HOSTS=<VPS_IP>,localhost
 CORS_ALLOWED_ORIGINS=http://<VPS_IP>:3000
 MEDIA_ROOT=/var/www/duocmua/backend/media/
