@@ -1,5 +1,0 @@
-[05/May/2026 16:57:39] "GET /api/schema/ HTTP/1.1" 200 37967
-[05/May/2026 16:57:39] "GET /api/docs/ HTTP/1.1" 200 4645
-[05/May/2026 16:57:49] "GET /api/schema/ HTTP/1.1" 200 37967
-[05/May/2026 16:58:00] "GET /api/docs/ HTTP/1.1" 200 4645
-[05/May/2026 16:58:00] "GET /api/redoc/ HTTP/1.1" 200 728
